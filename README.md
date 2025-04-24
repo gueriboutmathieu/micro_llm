@@ -7,18 +7,19 @@
 | micro\_llm/\_\_init\_\_.py                         |        0 |        0 |   100% |           |
 | micro\_llm/app.py                                  |       27 |       27 |     0% |      1-48 |
 | micro\_llm/config/\_\_init\_\_.py                  |        0 |        0 |   100% |           |
-| micro\_llm/config/auth\_config.py                  |        5 |        5 |     0% |       1-7 |
+| micro\_llm/config/auth\_config.py                  |        8 |        8 |     0% |      1-12 |
 | micro\_llm/config/openai\_config.py                |        4 |        4 |     0% |       1-6 |
 | micro\_llm/routes/\_\_init\_\_.py                  |        0 |        0 |   100% |           |
 | micro\_llm/routes/auth\_routes.py                  |       19 |       19 |     0% |      1-23 |
-| micro\_llm/routes/fastapi\_app.py                  |       17 |       17 |     0% |      1-29 |
-| micro\_llm/routes/llm\_routes.py                   |        8 |        8 |     0% |      1-15 |
+| micro\_llm/routes/fastapi\_app.py                  |       19 |       19 |     0% |      1-30 |
+| micro\_llm/routes/llm\_routes.py                   |        8 |        8 |     0% |      1-16 |
 | micro\_llm/routes/utils/\_\_init\_\_.py            |        0 |        0 |   100% |           |
+| micro\_llm/routes/utils/origins\_middleware.py     |        9 |        9 |     0% |      1-14 |
 | micro\_llm/routes/utils/validate\_user\_wrapper.py |        8 |        8 |     0% |      1-11 |
 | micro\_llm/services/\_\_init\_\_.py                |        0 |        0 |   100% |           |
 | micro\_llm/services/auth\_service.py               |       24 |       24 |     0% |      1-31 |
-| micro\_llm/services/llm\_service.py                |       11 |       11 |     0% |      1-19 |
-|                                          **TOTAL** |  **123** |  **123** | **0%** |           |
+| micro\_llm/services/llm\_service.py                |       11 |       11 |     0% |      1-23 |
+|                                          **TOTAL** |  **137** |  **137** | **0%** |           |
 
 
 ## Setup coverage badge

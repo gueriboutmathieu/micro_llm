@@ -62,10 +62,10 @@
         <p class="text">
             <a id="prevFileLink" class="nav" href="z_d3bbba803dc4051a_fastapi_app_py.html">&#xab; prev</a> &nbsp; &nbsp;
             <a id="indexLink" class="nav" href="index.html">&Hat; index</a> &nbsp; &nbsp;
-            <a id="nextFileLink" class="nav" href="z_ddfdbc0764af7dac_validate_user_wrapper_py.html">&#xbb; next</a>
+            <a id="nextFileLink" class="nav" href="z_ddfdbc0764af7dac_origins_middleware_py.html">&#xbb; next</a>
             &nbsp; &nbsp; &nbsp;
             <a class="nav" href="https://coverage.readthedocs.io/en/7.6.4">coverage.py v7.6.4</a>,
-            created at 2025-04-24 14:24 +0000
+            created at 2025-04-24 21:49 +0000
         </p>
         <aside class="hidden">
             <button type="button" class="button_next_chunk" data-shortcut="j"></button>
@@ -92,19 +92,20 @@
     <p class="mis show_mis"><span class="n"><a id="t10" href="#t10">10</a></span><span class="t">    <span class="key">async</span> <span class="key">def</span> <span class="nam">query_llm</span><span class="op">(</span>  <span class="com"># pyright: ignore[reportUnusedFunction]</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t11" href="#t11">11</a></span><span class="t">        <span class="nam">chat_messages</span><span class="op">:</span> <span class="nam">list</span><span class="op">[</span><span class="nam">ChatMessage</span><span class="op">]</span><span class="op">,</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t12" href="#t12">12</a></span><span class="t">        <span class="nam">model</span><span class="op">:</span> <span class="nam">str</span> <span class="op">=</span> <span class="str">"gpt-4.1-nano"</span><span class="op">,</span>&nbsp;</span><span class="r"></span></p>
-    <p class="pln"><span class="n"><a id="t13" href="#t13">13</a></span><span class="t">        <span class="nam">_</span><span class="op">:</span> <span class="key">None</span> <span class="op">=</span> <span class="nam">Depends</span><span class="op">(</span><span class="nam">validate_user_wrapper</span><span class="op">(</span><span class="nam">domain</span><span class="op">)</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
-    <p class="pln"><span class="n"><a id="t14" href="#t14">14</a></span><span class="t">    <span class="op">)</span> <span class="op">-></span> <span class="nam">ChatMessage</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
-    <p class="mis show_mis"><span class="n"><a id="t15" href="#t15">15</a></span><span class="t">        <span class="key">return</span> <span class="nam">domain</span><span class="op">.</span><span class="nam">query_llm</span><span class="op">(</span><span class="nam">chat_messages</span><span class="op">,</span> <span class="nam">model</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p class="pln"><span class="n"><a id="t13" href="#t13">13</a></span><span class="t">        <span class="nam">temperature</span><span class="op">:</span> <span class="nam">int</span> <span class="op">=</span> <span class="num">0</span><span class="op">,</span>&nbsp;</span><span class="r"></span></p>
+    <p class="pln"><span class="n"><a id="t14" href="#t14">14</a></span><span class="t">        <span class="nam">_</span><span class="op">:</span> <span class="key">None</span> <span class="op">=</span> <span class="nam">Depends</span><span class="op">(</span><span class="nam">validate_user_wrapper</span><span class="op">(</span><span class="nam">domain</span><span class="op">)</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p class="pln"><span class="n"><a id="t15" href="#t15">15</a></span><span class="t">    <span class="op">)</span> <span class="op">-></span> <span class="nam">ChatMessage</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
+    <p class="mis show_mis"><span class="n"><a id="t16" href="#t16">16</a></span><span class="t">        <span class="key">return</span> <span class="nam">domain</span><span class="op">.</span><span class="nam">query_llm</span><span class="op">(</span><span class="nam">chat_messages</span><span class="op">,</span> <span class="nam">model</span><span class="op">,</span> <span class="nam">temperature</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
 </main>
 <footer>
     <div class="content">
         <p>
             <a class="nav" href="z_d3bbba803dc4051a_fastapi_app_py.html">&#xab; prev</a> &nbsp; &nbsp;
             <a class="nav" href="index.html">&Hat; index</a> &nbsp; &nbsp;
-            <a class="nav" href="z_ddfdbc0764af7dac_validate_user_wrapper_py.html">&#xbb; next</a>
+            <a class="nav" href="z_ddfdbc0764af7dac_origins_middleware_py.html">&#xbb; next</a>
             &nbsp; &nbsp; &nbsp;
             <a class="nav" href="https://coverage.readthedocs.io/en/7.6.4">coverage.py v7.6.4</a>,
-            created at 2025-04-24 14:24 +0000
+            created at 2025-04-24 21:49 +0000
         </p>
     </div>
 </footer>
