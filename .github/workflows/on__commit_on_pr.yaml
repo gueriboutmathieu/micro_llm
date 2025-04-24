@@ -5,11 +5,11 @@ on: pull_request
 jobs:
   check-python-code:
     name: Check python code
-    uses: gueriboutmathieu/python_utils/.github/workflows/callable__check_python_code.yaml@1.0.16
+    uses: gueriboutmathieu/python_utils/.github/workflows/callable__check_python_code.yaml@1.0.18
     secrets: inherit
 
   validate-alembic-migrations:
     name: Check python code
-    uses: gueriboutmathieu/python_utils/.github/workflows/callable__validate_alembic_migrations.yaml@1.0.16
+    uses: gueriboutmathieu/python_utils/.github/workflows/callable__validate_alembic_migrations.yaml@1.0.18
     needs: check-python-code
     secrets: inherit

@@ -2,8 +2,8 @@ import importlib.metadata
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from flare.domain.domain import Domain
-from flare.routes import auth_routes, user_routes, video_routes
+from micro_llm.domain.domain import Domain
+from micro_llm.routes import auth_routes, llm_routes
 from python_utils import fastapi_generic_routes as generic_routes
 from python_utils import fastapi_middleware as catch_exceptions_middleware
 
@@ -11,7 +11,7 @@ from python_utils import fastapi_middleware as catch_exceptions_middleware
 
 class FastapiApp:
     def __init__(self, domain: Domain) -> None:
-        package_name = "flare"
+        package_name = "micro_llm"
         version = importlib.metadata.version(package_name)
         self.app = FastAPI(version=version)
 
@@ -26,5 +26,4 @@ class FastapiApp:
 
         auth_routes.load_routes(self.app, domain)
         generic_routes.load_routes(self.app, package_name, version)
-        user_routes.load_routes(self.app, domain)
-        video_routes.load_routes(self.app, domain)
+        llm_routes.load_routes(self.app, domain)

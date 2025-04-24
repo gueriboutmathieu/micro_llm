@@ -1,16 +1,12 @@
 import uvicorn
 
-from flare.config.auth_config import AuthConfig
-from flare.config.postgresql_config import PostgresqlConfig
-from flare.domain.domain import Domain
-from flare.repositories.user_repository import UserRepository
-from flare.routes.fastapi_app import FastapiApp
-from flare.services.auth_service import AuthService
-from flare.services.search_service import SearchService
-from flare.services.streaming_service import StreamingService
+from micro_llm.config.auth_config import AuthConfig
+from micro_llm.config.openai_config import OpenaiConfig
+from micro_llm.domain.domain import Domain
+from micro_llm.routes.fastapi_app import FastapiApp
+from micro_llm.services.auth_service import AuthService
+from micro_llm.services.llm_service import LlmService
 from python_utils.loggers import get_logger
-from python_utils.sqlalchemy_postgresql_engine_wrapper import SqlAlchemyPostgresqlEngineWrapper
-
 
 
 # Logger
@@ -19,44 +15,24 @@ logger = get_logger(__name__)
 
 # Configs
 auth_config = AuthConfig()
-postgresql_config = PostgresqlConfig()
+openai_config = OpenaiConfig()
 
 
 # Services
 auth_service = AuthService(auth_config.secret_key, auth_config.public_key)
-search_service = SearchService()
-streaming_service = StreamingService()
-
-
-# SQLAlchemyEngineWrapper
-sqlalchemy_postgresql_engine_wrapper = SqlAlchemyPostgresqlEngineWrapper(
-    sql_user=postgresql_config.sql_user,
-    sql_password=postgresql_config.sql_password,
-    sql_host=postgresql_config.sql_host,
-    sql_port=postgresql_config.sql_port,
-    sql_database=postgresql_config.sql_database,
-    pool_size=5
-)
-sqlalchemy_session = sqlalchemy_postgresql_engine_wrapper.create_session()
-
-
-# Repositories
-user_repository = UserRepository(sqlalchemy_session, logger)
+llm_service = LlmService(openai_config.api_key)
 
 
 class CommandContext:
     def __init__(self):
         self.auth_service = auth_service
-        self.search_service = search_service
-        self.streaming_service = streaming_service
-        self.sqlalchemy_session = sqlalchemy_session
-        self.user_repository = user_repository
+        self.llm_service = llm_service
 
     def commit(self):
-        self.sqlalchemy_session.commit()
+        pass
 
     def rollback(self):
-        self.sqlalchemy_session.rollback()
+        pass
 
 
 

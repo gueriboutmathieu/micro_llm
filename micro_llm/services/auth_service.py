@@ -21,7 +21,7 @@ class AuthService(Auth):
 
         return {"user_id": payload["user_id"], "username": payload["username"]}
 
-    def validate_user(self, token: str) -> str:
+    def validate_user(self, token: str) -> None:
         try:
             self.validate_token(token)
         except AuthException as e:
@@ -29,6 +29,3 @@ class AuthService(Auth):
         payload = decode(token, self.secret_key, algorithms=[self.algorithm])
         if not all(key in payload for key in self.token_data_keys):
             raise HTTPException(status_code=401, detail="Missing required data in token")
-
-        username = payload.get("username")
-        return username

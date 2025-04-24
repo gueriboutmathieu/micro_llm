@@ -7,7 +7,7 @@ from micro_llm.domain.entities.user_tokens import UserTokens
 def signin_command(command_context: CommandContext, public_key: str, username: str) -> UserTokens:
     command_context.auth_service.validate_public_key(public_key)
 
-    token_data = {"user_id": uuid7(), "username": username}
+    token_data = {"user_id": str(uuid7()), "username": username}
 
     access_token = command_context.auth_service.create_access_token(token_data)
 
