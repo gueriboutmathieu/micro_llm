@@ -1,0 +1,3 @@
+from micro_llm.domain.command_context import CommandContext as CommandContext
+
+def refresh_access_token_command(command_context: CommandContext, refresh_token: str) -> str: ...

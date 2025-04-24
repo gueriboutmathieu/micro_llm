@@ -1,0 +1,3 @@
+from micro_llm.domain.command_context import CommandContext as CommandContext
+
+def validate_user_command(command_context: CommandContext, access_token: str) -> None: ...

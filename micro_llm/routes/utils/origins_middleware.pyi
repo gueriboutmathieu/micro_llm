@@ -1,0 +1,3 @@
+from fastapi import FastAPI as FastAPI, Request as Request, Response as Response
+
+def add_middleware(fastapi_app: FastAPI, allowed_origins: list[str]) -> None: ...
