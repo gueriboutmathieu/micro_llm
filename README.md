@@ -27,6 +27,9 @@ uv sync
 ## Environment variables
 Create a `.env` file with these variables:
 ```
+AUTH_SECRET_KEY=<your-auth-secret-key>
+AUTH_PUBLIC_KEY=<your-auth-public-key>
+AUTH_ALLOWED_ORIGINS=<comma-separated-list-of-strings-of-allowed-origins>
 OPENAI_API_KEY=<your-openai-api-key>
 ```
 

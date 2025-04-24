@@ -10,6 +10,7 @@ def load_routes(fastapi_app: FastAPI, domain: Domain):
     async def query_llm(  # pyright: ignore[reportUnusedFunction]
         chat_messages: list[ChatMessage],
         model: str = "gpt-4.1-nano",
+        temperature: int = 0,
         _: None = Depends(validate_user_wrapper(domain))
     ) -> ChatMessage:
-        return domain.query_llm(chat_messages, model)
+        return domain.query_llm(chat_messages, model, temperature)
